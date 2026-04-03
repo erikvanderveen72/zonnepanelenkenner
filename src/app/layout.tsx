@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://zonnepanelenkenner.nl"),
   title: {
     default: "Zonnepanelen Advies 2026 | Zonnepanelenkenner.nl",
-    template: "%s | Zonnepanelenkenner.nl",
+    template: "%s | Zonnepanelenkenner.nl 2026",
   },
   description:
     "Onafhankelijk advies over zonnepanelen. Vergelijk installateurs, bereken je terugverdientijd en ontdek welke zonnepanelen bij jou passen. 100% gratis.",
