@@ -26,7 +26,7 @@ export default function Navbar() {
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white shadow-lg"
-          : "bg-transparent"
+          : "bg-stone-900"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
