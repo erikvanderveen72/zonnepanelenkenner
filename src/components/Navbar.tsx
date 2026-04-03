@@ -18,6 +18,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const linkColor = scrolled ? "#1c1917" : "#ffffff";
+  const linkHoverClass = scrolled ? "hover:text-amber-600" : "hover:text-amber-300";
+
   return (
     <nav
       className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -32,7 +35,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl">☀</span>
             <div className="flex">
-              <span className={scrolled ? "text-stone-900 font-bold" : "text-white font-bold"}>
+              <span className="font-bold" style={{ color: linkColor }}>
                 zonnepanelenkenner
               </span>
               <span className="text-amber-500 font-bold">.nl</span>
@@ -43,9 +46,8 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className={`transition-colors ${
-                scrolled ? "text-stone-900 hover:text-amber-600" : "text-white hover:text-amber-300"
-              }`}
+              className={`transition-colors ${linkHoverClass}`}
+              style={{ color: linkColor }}
             >
               Home
             </Link>
@@ -53,9 +55,8 @@ export default function Navbar() {
             {/* Advies Dropdown */}
             <div className="relative group">
               <button
-                className={`flex items-center gap-1 transition-colors ${
-                  scrolled ? "text-stone-900 hover:text-amber-600" : "text-white hover:text-amber-300"
-                }`}
+                className={`flex items-center gap-1 transition-colors ${linkHoverClass}`}
+                style={{ color: linkColor }}
               >
                 Advies
                 <ChevronDown size={16} className="group-hover:rotate-180 transition-transform" />
@@ -78,36 +79,32 @@ export default function Navbar() {
 
             <Link
               href="/calculator"
-              className={`transition-colors ${
-                scrolled ? "text-stone-900 hover:text-amber-600" : "text-white hover:text-amber-300"
-              }`}
+              className={`transition-colors ${linkHoverClass}`}
+              style={{ color: linkColor }}
             >
               Calculator
             </Link>
 
             <Link
               href="/begrippenlijst"
-              className={`transition-colors ${
-                scrolled ? "text-stone-900 hover:text-amber-600" : "text-white hover:text-amber-300"
-              }`}
+              className={`transition-colors ${linkHoverClass}`}
+              style={{ color: linkColor }}
             >
               Begrippenlijst
             </Link>
 
             <Link
               href="/vergelijken"
-              className={`transition-colors ${
-                scrolled ? "text-stone-900 hover:text-amber-600" : "text-white hover:text-amber-300"
-              }`}
+              className={`transition-colors ${linkHoverClass}`}
+              style={{ color: linkColor }}
             >
               Vergelijken
             </Link>
 
             <Link
               href="/blog"
-              className={`transition-colors ${
-                scrolled ? "text-stone-900 hover:text-amber-600" : "text-white hover:text-amber-300"
-              }`}
+              className={`transition-colors ${linkHoverClass}`}
+              style={{ color: linkColor }}
             >
               Blog
             </Link>
@@ -126,9 +123,9 @@ export default function Navbar() {
             aria-label="Menu"
           >
             {isOpen ? (
-              <X size={24} className={scrolled ? "text-stone-900" : "text-white"} />
+              <X size={24} style={{ color: linkColor }} />
             ) : (
-              <Menu size={24} className={scrolled ? "text-stone-900" : "text-white"} />
+              <Menu size={24} style={{ color: linkColor }} />
             )}
           </button>
         </div>
