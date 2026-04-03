@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -98,6 +99,18 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P2DHVR0VVS"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-P2DHVR0VVS');
+          `}
+        </Script>
         <meta name="geo.placename" content="Netherlands" />
         <meta name="geo.region" content="NL" />
         <meta name="ICBM" content="52.1326, 5.2913" />
