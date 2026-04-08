@@ -5,11 +5,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://zonnepanelenkenner.nl";
 
   const staticPages: MetadataRoute.Sitemap = [
+    // Homepage — highest priority
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
+    },
+    // Primary pages — tools & advice
+    {
+      url: `${baseUrl}/calculator`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/advies`,
@@ -18,19 +26,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/calculator`,
+      url: `${baseUrl}/advies/keuzehulp`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.9,
+      priority: 0.8,
     },
     {
-      url: `${baseUrl}/begrippenlijst`,
+      url: `${baseUrl}/advies/tips`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/vergelijken`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/soorten`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    // Secondary pages — informational
+    {
+      url: `${baseUrl}/begrippenlijst`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
@@ -40,6 +61,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    // Legal & contact — lower priority but still indexed
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/disclaimer`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ];
 

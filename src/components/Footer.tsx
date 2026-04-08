@@ -53,7 +53,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/advies/types" className="text-stone-400 hover:text-amber-500 transition-colors">
+                <Link href="/soorten" className="text-stone-400 hover:text-amber-500 transition-colors">
                   Soorten Panelen
                 </Link>
               </li>

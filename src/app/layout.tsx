@@ -78,6 +78,15 @@ export default function RootLayout({
         publisher: {
           "@id": "https://zonnepanelenkenner.nl/#organization",
         },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate:
+              "https://zonnepanelenkenner.nl/begrippenlijst?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
       },
       {
         "@type": "Organization",
@@ -90,8 +99,15 @@ export default function RootLayout({
         address: {
           "@type": "PostalAddress",
           addressCountry: "NL",
+          addressRegion: "Nederland",
         },
         sameAs: [],
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          email: "info@zonnepanelenkenner.nl",
+          availableLanguage: "Dutch",
+        },
       },
     ],
   };
